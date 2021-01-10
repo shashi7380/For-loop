@@ -1,11 +1,21 @@
-alert("Click me shown in the number!");
-var greeting ="";
-var i;
-for (let i = 0; i <10; i++) {
-greeting+="</br> Thi is number="+i;
+function myError() {
+    var msg,x;
+    msg= document.getElementById("test");
+    msg.innerHTML="";
+    x=document.getElementById("same").value;
     
-} 
+
+try{
+    if(x=="") throw "please choose a number";
+    if(isNaN(x)) throw "only number allowed";
+    if(x<4) throw "choose number greater 3";
+}
+catch(err){
+    msg.innerHTML="Error is"+err;
 
 
-
-document.getElementById("test").innerHTML=greeting;
+}
+finally{
+    document.getElementById("same").value="";
+}
+}
